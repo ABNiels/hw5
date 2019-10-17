@@ -29,7 +29,7 @@ int main(int argc, char* argv[]){
 	printf(" e.g. makeLED flash\n");
         return 2;
    }
-   printf("Starting the makeLED program\n");
+   printf("Starting the makeLED-hw5 program\n");
    printf("The current LED Path is: " LED3_PATH "\n");
 
    // select whether command is on, off, flash or status
@@ -63,6 +63,7 @@ int main(int argc, char* argv[]){
    else if (strcmp(argv[1], "blink")==0 && argc>=3) {
       char *ptr;
       long int blinks = strtol(argv[2], &ptr, 10);
+      /* test input is an integer */
       if (blinks && !(*ptr)) {
 	 printf("Blinking the LED %i times\n", (int)blinks);
          for (char step=1; step<=blinks; step++) {
